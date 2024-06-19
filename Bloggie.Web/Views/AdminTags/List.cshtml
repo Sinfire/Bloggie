@@ -9,9 +9,9 @@
 	</div>
 </div>
 
-<div class="container py-5" ">
-@if (Model != null && Model.Any())
-{
+<div class="container py-5">
+	@if (Model != null && Model.Any())
+	{
 		<table class="table">
 			<thead>
 				<tr>
@@ -22,27 +22,27 @@
 				</tr>
 			</thead>
 			<tbody>
-			@foreach (var tag in Model)
-			{
-				<tr>
-					<td>@tag.Id</td>
-					<td>@tag.Name</td>
-					<td>@tag.DisplayName</td>
-					<td>
-						<a asp-area="" 
-							asp-controller="AdminTags"
-							asp-action="Edit"
-							asp-route-id="@tag.Id">Edit</a>
-					</td>
-				</tr>
-			}
+				@foreach (var tag in Model)
+				{
+					<tr>
+						<td>@tag.Id</td>
+						<td>@tag.Name</td>
+						<td>@tag.DisplayName</td>
+						<td>
+							<a asp-area=""
+							   asp-controller="AdminTags"
+							   asp-action="Edit"
+							   asp-route-id="@tag.Id">Edit</a>
+						</td>
+					</tr>
+				}
 			</tbody>
 
 
 		</table>
-}
-else
-{
+	}
+	else
+	{
 		<p>No tags were found!!</p>
-}
+	}
 </div>
